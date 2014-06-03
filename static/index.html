@@ -1,0 +1,26 @@
+    <!DOCTYPE HTML>
+    <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
+            <script src="/socket.io/socket.io.js"></script>
+            <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+            <script type="text/javascript" src="mylogic.js"></script>
+        </head>
+         <body>
+         
+<form name="myform">
+create or join room:
+<input type="text" name="inputtext"></textarea>
+<input type="button" value="Add New Text" onClick="my_init();"></p>
+tell your friend to join this room:
+<input type="text" name="outputtext"></textarea>
+</form>
+
+            <div id="otherClients"> </div>
+            <video  style="float:left" id="self" width="300" height="200"></video>
+            <div style="position:relative;float:left;width:300px">
+                <video id="caller" width="300" height="200"></video>
+            </div>
+            
+        </body>
+    </html>

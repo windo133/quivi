@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EasyRTC Demo: Audio and Video Chat</title>
+    <link rel="stylesheet" type="text/css" href="test.css" />
+ 
+    <!-- Assumes global locations for socket.io.js and easyrtc.js -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+ 
+  </head>
+  <body>
+  
+  <form name="myform">
+create or join room:
+<input type="text" name="inputtext"></textarea>
+
+and then tell your friend to join this room:
+<input name="outputtext" type="text" readonly></textarea>
+  </form>
+
+
+        <div id="demoContainer">
+          <div id="connectControls">
+            <input type="checkbox" checked="checked" id="shareAudio" />Share audio
+            <input type="checkbox" checked="checked" id="shareVideo" />Share video <br />
+            <button id="connectButton" onclick="connect()">Connect</button>
+            <button id="hangupButton" disabled="disabled" onclick="hangup()">Hangup</button>
+            <button id="disconnectButton" disabled="disabled" onclick="disconnect()">Disconnect</button>
+            <div id="iam">Not yet connected...</div>
+            <br />
+            <strong>Connected users:</strong>
+            <div id="otherClients"></div>
+          </div>
+ 
+          <div id="videos">
+            <video autoplay id="selfVideo"  class="easyrtcMirror" muted volume="0"></video>
+            <video autoplay id="callerVideo"></video>
+            <div id="acceptCallBox"> <!-- Should be initially hidden using CSS -->
+              <div id="acceptCallLabel"></div>
+              <button id="callAcceptButton" >Accept</button> <button id="callRejectButton">Reject</button>
+            </div>
+          </div>
+          
+          <div id="sendMessageArea">
+          	<div id="iam">Type Message</div>
+          	<textarea id="sendMessageText"></textarea>
+          </div>
+          
+          <div id="receiveMessageArea">
+          	Chat Window:
+          	<div id="conversation"></div>
+          </div>
+        
+        
+        </div>
+        
+
+        
+        
+  </body>
+</html>
